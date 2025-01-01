@@ -1,14 +1,14 @@
 'use client'
 
-import type { Request } from '../../../../../types/request'
-import { StatusIndicator } from './status-indicator'
+import { Request } from '@/types/request'
+import { TeacherStatusIndicator } from './teacher_status-indicator'
 
 interface RequestRowProps {
   request: Request
   onClick?: () => void
 }
 
-export function RequestRow({ request, onClick }: RequestRowProps) {
+export function TeacherRequestRow({ request, onClick }: RequestRowProps) {
   return (
     <div
       onClick={onClick}
@@ -16,11 +16,11 @@ export function RequestRow({ request, onClick }: RequestRowProps) {
     >
       <div>{request.studentName}</div>
       <div>{request.program}</div>
-      <div>{request.dueDate}</div>
+      <div className="text-center">{request.dueDate}</div>
       <div className="flex items-center justify-between">
-        <span>{request.dateRequested}</span>
+        <span className="flex-grow text-center">{request.dateRequested}</span>
         {request.status && (
-          <StatusIndicator initialStatus={request.status} />
+          <TeacherStatusIndicator initialStatus={request.status} />
         )}
       </div>
     </div>

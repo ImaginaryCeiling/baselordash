@@ -7,7 +7,7 @@ interface StatusIndicatorProps {
   onChange?: (status: 'red' | 'yellow' | 'green') => void
 }
 
-export function StatusIndicator({ initialStatus, onChange }: StatusIndicatorProps) {
+export function TeacherStatusIndicator({ initialStatus, onChange }: StatusIndicatorProps) {
   const [status, setStatus] = useState(initialStatus)
 
   const handleClick = (e: React.MouseEvent) => {

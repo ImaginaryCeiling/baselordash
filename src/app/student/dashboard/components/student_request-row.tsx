@@ -1,11 +1,11 @@
-import type { Request } from '../../../../../types/request'
+import type { Request } from '@/types/request'
 
 interface RequestRowProps {
   request: Request
   onClick?: () => void
 }
 
-export function RequestRow({ request, onClick }: RequestRowProps) {
+export function StudentRequestRow({ request, onClick }: RequestRowProps) {
   return (
     <div
       onClick={onClick}
@@ -13,8 +13,8 @@ export function RequestRow({ request, onClick }: RequestRowProps) {
     >
       <div>{request.teacherName}</div>
       <div>{request.program}</div>
-      <div>{request.dueDate}</div>
-      <div>{request.dateRequested}</div>
+      <div className="text-center">{request.dueDate}</div>
+      <div className="text-center">{request.dateRequested}</div>
     </div>
   )
 }

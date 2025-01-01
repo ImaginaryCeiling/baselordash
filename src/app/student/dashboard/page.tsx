@@ -1,6 +1,6 @@
 import { Header } from '@/components/header'
-import { WelcomeSection } from '@/components/welcome-section'
-import { RequestList } from './components/student_request-list'
+import { StudentWelcomeSection } from './components/student_welcome-section'
+import { StudentRequestList } from './components/student_request-list'
 import { studentInProgressRequests, studentSentRequests } from '@/lib/data'
 
 export default function StudentDashboard() {
@@ -8,17 +8,17 @@ export default function StudentDashboard() {
     <div className="min-h-screen bg-white">
       <Header />
       <main>
-        <WelcomeSection 
+        <StudentWelcomeSection 
           sentRequestsCount={studentSentRequests.length} 
           inProgressCount={studentInProgressRequests.length} 
         />
         <div className="space-y-8 p-6 pt-0">
-          <RequestList 
+          <StudentRequestList 
             title="In Progress Requests" 
             requests={studentInProgressRequests}
             showAddButton 
           />
-          <RequestList 
+          <StudentRequestList 
             title="Sent Requests" 
             requests={studentSentRequests} 
           />

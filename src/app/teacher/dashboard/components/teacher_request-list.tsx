@@ -3,9 +3,9 @@
 import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { ArrowUpDown, Plus } from 'lucide-react'
-import { RequestRow } from './teacher_request-row'
-import { RequestModal } from './teacher_request-modal'
-import type { Request } from '../../../../../types/request'
+import { TeacherRequestRow } from './teacher_request-row'
+import { TeacherRequestModal } from './teacher_request-modal'
+import type { Request } from '@/types/request'
 
 interface RequestListProps {
   title: string
@@ -13,7 +13,7 @@ interface RequestListProps {
   showAddButton?: boolean
 }
 
-export function RequestList({ title, requests, showAddButton }: RequestListProps) {
+export function TeacherRequestList({ title, requests, showAddButton }: RequestListProps) {
   const [selectedRequest, setSelectedRequest] = useState<Request | null>(null)
 
   return (
@@ -47,14 +47,14 @@ export function RequestList({ title, requests, showAddButton }: RequestListProps
       </div>
       <div className="space-y-2">
         {requests.map((request) => (
-          <RequestRow
+          <TeacherRequestRow
             key={request.id}
             request={request}
             onClick={() => setSelectedRequest(request)}
           />
         ))}
       </div>
-      <RequestModal
+      <TeacherRequestModal
         request={selectedRequest}
         open={!!selectedRequest}
         onClose={() => setSelectedRequest(null)}
